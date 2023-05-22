@@ -1,0 +1,36 @@
+<table class="table is-fullwidth">
+  <thead>
+    <th>Place Name</th>
+    <th>Category</th>
+    <th>Description</th>
+    <th>County</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+    <th>Creator</th>
+    <th></th>
+  </thead>
+  <tbody>
+    {{#each places}}
+      <tr>
+        <td>{{placename}}</td>
+        <td>{{category}}</td>
+        <td>{{description}}</td>
+        {{!-- <td>{{county.lastName}}, {{county.countyName}}</td> --}}
+        <td>{{county.countyName}}</td>
+        <td>{{lat}}</td>
+        <td>{{lng}}</td>
+        <td> {{donor.firstName}} {{donor.lastName}} </td>
+        <td>{{donor._id}}</td>
+        <td>
+          {{!-- <a href="/place/{{../_id}}editplace/{{_id}}" class="ui icon button"> --}}
+          <a href="/editplace/{{_id}}" class="ui icon button">
+            <i class="fas fa-arrow-alt-circle-right"></i>
+          </a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+<div class="box">
+  <div class="title is-5"> Total Registerd Places:  {{count}} </div>
+</div>

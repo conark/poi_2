@@ -1,0 +1,38 @@
+
+<div class="columns is-vcentered">
+  <div class="column is-one-thirds">
+    {{> TitleBar title="Walk Trail POI" subTitle="Admin view - user update"}}
+  </div>
+  <div class="column">
+  {{> MainNavigator active="adminedituser"}}
+  </div>
+</div>
+
+<label><b>Admin - User Details:</b></label>
+<form class="box" action="/adminupdateuser/{{user._id}}" method="POST">
+  <div class="field is-horizontal">
+    <div class="field-body">
+      <div class="field">
+        <label for="firstName">First Name:</label>
+        <input class="input" type="text" name="firstName" value="{{user.firstName}}">
+      </div>
+      <div class="field">
+        <label for="lastName">Last Name:</label>
+        <input class="input" type="text" name="lastName" value="{{user.lastName}}">
+      </div>
+      <div class="field">
+        <label for="email">Email:</label>
+        <input class="input" type="text" name="email" value="{{user.email}}">
+      </div>
+      <div class="field">
+        <label for="password">Password:</label>
+        <input class="input" type="text" name="password" value="{{user.password}}">
+      </div>
+      <div class="field">
+        <label for="admin">Admin:</label>
+        <input class="input" type="text" name="admin" value="{{user.admin}}">
+      </div>
+    </div>
+  </div>
+  <button class="button is-primary" type="submit">Update User</button>
+</form>

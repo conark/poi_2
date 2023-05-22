@@ -1,0 +1,19 @@
+
+<div class="columns is-vcentered">
+  <div class="column is-one-thirds">
+    {{> TitleBar title="Walk Trail POI" subTitle="admin view"}}
+  </div>
+  <div class="column">
+    {{> MainNavigator active="admindashboard"}}
+  </div>
+</div>
+
+<section class="section columns is-vcentered">
+  <div class="column has-text-centered">
+    <div class="title">
+      Users List
+    </div>
+    {{> list-users}}
+    {{> add-user}}
+  </div>
+</section>

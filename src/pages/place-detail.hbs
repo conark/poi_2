@@ -1,0 +1,32 @@
+<div class="columns is-vcentered">
+  <div class="column is-one-thirds">
+    {{> TitleBar title="Walk Trail POI" subTitle="Go outside! Walk! Walk! Walk!"}}
+  </div>
+  <div class="column">
+    {{> MainNavigator active="editplace"}}
+  </div>
+</div>
+
+<form class="box"  action="/updateplace/{{place._id}}" method="POST">
+  <label>Update Trail Details:</label>
+  <div class="field is-horizontal">
+    <div class="field-body">
+      <div class="field">
+        <input class="input" type="text" name="category", value="{{place.category}}">
+      </div>
+      <div class="field">
+        <input class="input" type="text" name="placename", value="{{place.placename}}">
+      </div>
+      <div class="field">
+        <input class="input" type="text" name="description" value="{{place.description}}">
+      </div>
+      <div class="field">
+        <input class="input" type="text"  name="lat" value="{{place.lat}}">
+      </div>
+      <div class="field">
+        <input class="input" type="text"  name="lng" value="{{place.lng}}">
+      </div>
+    </div>
+  </div>
+  <button class="button is-primary">Update place</button>
+</form>

@@ -1,0 +1,35 @@
+<table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th>Place Name</th>
+      <th>Category</th>
+      <th>Description</th>
+      <th>County</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Creator</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each userplaces}}
+      <tr>
+        <td>{{this.placename}}</td>
+        <td>{{this.category}}</td>
+        <td>{{this.description}}</td>
+        <td>{{this.county.countyName}}</td>
+        <td>{{this.lat}}</td>
+        <td>{{this.lng}}</td>
+        <td>{{this.donor.firstName}} {{this.donor.lastName}}</td>
+        <td>
+          <a href="/editplace/{{this._id}}" class="ui icon button">
+            <i class="fas fa-arrow-alt-circle-right"></i>
+          </a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+<div class="box">
+  <div class="title is-5">Total Registered Your Places: {{count}}</div>
+</div>

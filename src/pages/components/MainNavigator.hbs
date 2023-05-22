@@ -1,0 +1,20 @@
+<div class="box has-text-centered columns m-1">
+  <a href="/place" class="column is-2">
+    <i class="fas fa-map-pin fa-3x" style="color:rgb(153, 196, 74)"></i>
+  </a>
+  <a href="/report" class="column is-2">
+    <i class="fas fa-th-list fa-3x" style="color:rgb(63, 122, 139)"></i>
+  </a>
+  <a href="/edituser/{{user._id}}" class="column is-2">
+    <i class="fas fa-cogs fa-3x" style="color:rgb(123, 247, 224)"></i>
+  </a>
+<!-- Show admin dashboard button if user is an admin -->
+  {{#if user.admin}}
+    <a href="/admindashboard" class="column is-2">
+      <i class="fas fa-award fa-3x" style="color:rgb(195, 144, 50)"></i>      
+    </a>
+  {{/if}}
+  <a href="/logout" class="column is-2">
+    <i class="fas fa-sign-out-alt fa-3x" style="color:rgb(156, 70, 128)"></i>
+  </a>
+</div>

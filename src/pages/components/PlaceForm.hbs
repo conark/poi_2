@@ -1,0 +1,39 @@
+<form action="/place" method="POST">
+  <div class="field">
+    <label class="label">Enter Place Name</label> <input class="input" type="string" placeholder="Place Name" name="placename">
+  </div>
+  <div class="field">
+    <label class="label">Enter Description</label> <input class="input" type="string" placeholder="Description" name="description">
+  </div>
+  <div class="field">
+    <label class="label">Enter Latitude</label> <input class="input" type="string" placeholder="Latitude" name="lat">
+  </div>
+  <div class="field">
+    <label class="label">Enter Longtitude</label> <input class="input" type="string" placeholder="Longitude" name="lng">
+  </div>
+  <div class="field">
+  <div class="field">
+    <label class="label">Chose Category</label>
+  <div class="control">
+      <label class="radio"> <input type="radio" name="category" value="riverside"> Riverside </label>
+      <label class="radio"><input type="radio" name="category" value="seaside"> Seaside </label>
+      <label class="radio"><input type="radio" name="category" value="forest"> Forest </label>
+      <label class="radio"> <input type="radio" name="category" value="cliff"> Cliff </label>
+    </div>
+  </div>
+  <div class="field">
+        <label class="label">Chose County</label>
+    <div class="select">
+      <select name="county">
+        {{#each counties }}
+           <option> {{countyName}}</option>
+        {{/each}}
+      </select>
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      <button class="button is-link is-light">Submit</button>
+    </div>
+  </div>
+</form>

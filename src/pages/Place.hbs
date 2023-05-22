@@ -1,0 +1,24 @@
+<div class="columns is-vcentered">
+  <div class="column is-one-thirds">
+    {{> TitleBar title="Walk Trail POI" subTitle="Go outside! Walk! Walk! Walk!"}}
+  </div>
+  <div class="column">
+    {{> MainNavigator }}
+  </div>
+</div>
+
+<div class="columns is-vcentered">
+  <div class="column has-text-centered">
+    <img width="500" src="images/img2.png"/>
+  </div>
+  <div class="column box has-text-centered">
+    <h1 class="title is-4">Where is the favorite place to walk?</h1>
+    {{#if user}}
+      <div class="is-size-7">Welcome {{user.firstName}} {{user.lastName}}!!!!</div>
+    {{else}}
+      <div class="is-size-7">Point of Interest</div>
+    {{/if}}
+    {{> PlaceForm }}
+  </div>
+</div>
+

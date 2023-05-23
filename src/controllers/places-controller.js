@@ -46,49 +46,7 @@ export const placesController = {
       }
     },
   },
-  // userplaces: {
-  //   handler: async function (request, h) {
-  //     try {
-  //       const loggedInUser = request.auth.credentials;
-  //       const userplaces = await db.placeStore.getPlaceByDonor(loggedInUser._id);
-  
-  //       // Filter places based on Donor_id and Logged-in.id
-  //       const filteredPlaces = userplaces.filter(place => place.donor.toString() === loggedInUser._id.toString());
-  //       const count = filteredPlaces.length;
-  //       const viewData = {
-  //         title: "Your Favorite Walk Trail",
-  //         userplaces: filteredPlaces,
-  //         count: count,
-  //         user: loggedInUser,
-  //       };
-  //       return h.view("Report", viewData);
-  //     } catch (err) {
-  //       return h.view("main", { errors: [{ message: err.message }] });
-  //     }
-  //   },
-  // }
-  // userplaces: {
-  //   handler: async function (request, h) {
-  //     try {
-  //       const loggedInUser = request.auth.credentials;
-  //       const userplaces = await db.placeStore.getPlaceByDonor(loggedInUser._id);
-        
-  //       // Filter places based on Donor_id and Logged-in.id
-  //       const filteredPlaces = userplaces.filter(place => place.donor === loggedInUser._id);
-        
-  //       const count = filteredPlaces.length;
-  //       const viewData = {
-  //         title: "Your Favorite Walk Trail",
-  //         userplaces: filteredPlaces,
-  //         count: count,
-  //         user: loggedInUser,
-  //       };
-  //       return h.view("Report", viewData);
-  //     } catch (err) {
-  //       return h.view("main", { errors: [{ message: err.message }] });
-  //     }
-  //   },
-  // },
+
 
   userplaces: {
     handler: async function (request, h) {
@@ -96,17 +54,15 @@ export const placesController = {
         const loggedInUser = request.auth.credentials;
         const userplaces = await db.placeStore.getPlaceByDonor(loggedInUser._id);
   
-        // Filter places based on Donor_id and Logged-in.id
-        const filteredPlaces = userplaces.filter(place => place.donor._id.toString() === loggedInUser._id.toString());
-  
-        const count = filteredPlaces.length;
+         const count = userplaces.length;
+
         const viewData = {
           title: "Your Favorite Walk Trail",
-          userplaces: filteredPlaces,
+          userplaces: userplaces,
           count: count,
           user: loggedInUser,
         };
-        return h.view("users-olacelist", viewData);
+        return h.view("users-placelist", viewData);
       } catch (err) {
         return h.view("main", { errors: [{ message: err.message }] });
       }

@@ -1,0 +1,19 @@
+<table class="table is-fullwidth">
+  <thead>
+    <th>Rate</th>
+    <th>Review</th>
+    {{!-- <th>image</th> --}}
+  </thead>
+  <tbody>
+    {{#each reviews}}
+      <tr>
+        <td>{{rate}}</td>
+        <td>{{review}}</td>
+        {{!-- <td>{{img}}</td> --}}
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+<div class="box">
+  <div class="title is-5"> Average Rate:  {{average}}, Total Registerd Places:  {{count}} </div>
+</div>

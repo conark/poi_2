@@ -7,7 +7,7 @@
     <th>Latitude</th>
     <th>Longitude</th>
     <th>Creator</th>
-    <th></th>
+    <th>More</th>
   </thead>
   <tbody>
     {{#each places}}
@@ -20,9 +20,7 @@
         <td>{{lat}}</td>
         <td>{{lng}}</td>
         <td> {{donor.firstName}} {{donor.lastName}} </td>
-        <td>{{donor._id}}</td>
         <td>
-          {{!-- <a href="/place/{{../_id}}editplace/{{_id}}" class="ui icon button"> --}}
           <a href="/editplace/{{_id}}" class="ui icon button">
             <i class="fas fa-arrow-alt-circle-right"></i>
           </a>

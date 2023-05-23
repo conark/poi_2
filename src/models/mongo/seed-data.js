@@ -27,13 +27,9 @@ export const seedData = {
     _model: "County",
     waterford: {
       countyName: "Waterford",
-      // lastName: "Simpson",
-      // office: "President",
     },
     cork: {
       countyName: "Cork",
-      // lastName: "Simpson",
-      // office: "President",
     },
     dublin: {
       countyName: "Dublin",

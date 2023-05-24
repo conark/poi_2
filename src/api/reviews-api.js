@@ -20,6 +20,19 @@ export const reviewsApi = {
       return reviews;
     },
   },
+  findByDonor: {
+    auth: {
+      strategy: "jwt",
+    },
+    handler: async function (request, h) {
+      const reviews = await db.reviewStore.getDonorReviewById(request.params.id);
+      return reviews;
+    },
+  },
+
+
+
+
   findOne: {
     auth: {
       strategy: "jwt",

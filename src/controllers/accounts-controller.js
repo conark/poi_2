@@ -8,13 +8,13 @@ export const accountsController = {
   index: {
     auth: false,
     handler: function (request, h) {
-      return h.view("Main", { title: "Welcome to Playlist" });
+      return h.view("Main", { title: "Welcome to POI" });
     },
   },
   showSignup: {
     auth: false,
     handler: function (request, h) {
-      return h.view("Signup", { title: "Sign up for Playlist" });
+      return h.view("Signup", { title: "Sign up for POI" });
     },
   },
   signup: {
@@ -36,7 +36,7 @@ export const accountsController = {
   showLogin: {
     auth: false,
     handler: function (request, h) {
-      return h.view("Login", { title: "Login to Playlist" });
+      return h.view("Login", { title: "Login to POI" });
     },
   },
   login: {

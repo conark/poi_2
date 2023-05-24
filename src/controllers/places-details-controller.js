@@ -36,7 +36,6 @@ export const placeDetailController = {
         user: loggedInUser,
       };
       return h.view("place-detail", viewData).redirect(`/editplace/${place._id}`);
-      // return h.redirect(`/place/${request.params.id}`);
     },
   },
 };

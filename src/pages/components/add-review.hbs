@@ -1,4 +1,4 @@
-<form class="box" action="/editplace/{{place._id}}/addreview" method="POST">
+<form class="box" action="/editplace/addreview" method="POST">
   <label>Enter new review</label>
   <div class="field is-horizontal">
     <div class="field-body">
@@ -29,13 +29,13 @@
     </form>
   </div>
 </div> --}}
-
+{{!-- 
 <script>
-  const fileInput = document.querySelector(".file-input");
+ // const fileInput = document.querySelector(".file-input");
   fileInput.onchange = () => {
     if (fileInput.files.length > 0) {
-      const fileName = document.querySelector(".file-name");
+ //     const fileName = document.querySelector(".file-name");
       fileName.textContent = fileInput.files[0].name;
     }
   };
-</script>
+</script> --}}

@@ -6,34 +6,71 @@
     {{> MainNavigator active="editplace"}}
   </div>
 </div>
-
 <form class="box"  action="/updateplace/{{place._id}}" method="POST">
   <label>Update Trail Details:</label>
   <div class="field is-horizontal">
     <div class="field-body">
       <div class="field">
         <label for="firstName">Category:</label>
-        <input class="input" type="text" name="category", value="{{place.category}}">
+        <input class="input" type="text" name="category" value="{{place.category}}">
       </div>
       <div class="field">
         <label for="placename">Place Name:</label>
-        <input class="input" type="text" name="placename", value="{{place.placename}}">
+        <input class="input" type="text" name="placename" value="{{place.placename}}">
       </div>
       <div class="field">
-        <label for="firstName">Discription:</label>
+        <label for="firstName">Description:</label>
         <input class="input" type="text" name="description" value="{{place.description}}">
       </div>
       <div class="field">
         <label for="firstName">Lat:</label>
-        <input class="input" type="text"  name="lat" value="{{place.lat}}">
+        <input class="input" type="text" name="lat" value="{{place.lat}}">
       </div>
       <div class="field">
         <label for="firstName">Lng:</label>
-        <input class="input" type="text"  name="lng" value="{{place.lng}}">
+        <input class="input" type="text" name="lng" value="{{place.lng}}">
       </div>
     </div>
   </div>
   <button class="button is-primary">Update place</button>
 </form>
-    {{> review-list}}
-    {{> add-review}}
+<form class="box" action="/editplace/addreview" method="POST">
+  <label>Enter new review</label>
+  <div class="field is-horizontal">
+    <div class="field-body">
+      <div class="field">
+        <input class="input" type="text" placeholder="Enter Rate" name="rate">
+      </div>
+      <div class="field">
+        <input class="input" type="text" placeholder="Enter Review" name="review">
+      </div>
+      <button class="button is-primary">Add Review</button>
+    </div>
+  </div>
+</form>
+<table class="table is-fullwidth">
+  <thead>
+    <th>Rate</th>
+    <th>Review</th>
+    {{!-- <th>image</th> --}}
+  </thead>
+  <tbody>
+    {{#each reviews}}
+      <tr>
+        <td>{{rate}}</td>
+        <td>{{review}}</td>
+        {{!-- <td>{{img}}</td> --}}
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+<div class="box">
+  <div class="title is-5"> Average Rate: {{average}}, Total Registered Places: {{count}}</div>
+</div>
+{{!-- {{> add-review}} --}}
+{{!--
+{{> review-list}} --}}
+
+
+
+

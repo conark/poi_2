@@ -15,7 +15,7 @@ Dependance:
 
 🧚 Youtube
 
-https://youtu.be/6GbO0GvJRpU
+
 
 🧚 Programming languages
 
@@ -23,25 +23,19 @@ Javascript,
 
 Handlebars
 
-🧚 Api documentation
 
-http://localhost:3000/documentation#/api/getApiUsers
- 
-🧚 Dependencies
-
-Hapi, cloudinary, joi, mongoose, dotenv,jsonwebtoke, uui
 
 🌱 Overview
 
-Fullstack web development assignment 1
+Fullstack web development assignment 2
 
 PlaceMark
 
-A point of interest (POI) for Walk Trail Map.
+A point of interest (POI) for Walk Trail
 
 🌱 Users
 
-Role: General
+Role: Admin
 
 - Homer Simpson	email:homer@simpson.com Passward: secret
 
@@ -49,7 +43,7 @@ Role: General
 
 - Marge	Simpson	email:marge@simpson.com	Passward: secret
 
-Role: Admin 
+Role: General 
 
 - Bart Simpson email: bart@simpson.comPassward: secret
 
@@ -57,15 +51,18 @@ Role: Admin
 
 - Signin, Login
 
-- About
+- Create POI
 
-- Dashboard - List Counties, Add County, Delete County
+- Public POI 
 
-  - List Places, Add Place, Delete Place, image upload
+  - List Places, Update Places, List Rate &Reviews, Add Rate & review
+
+- Private POI
+  - List Places, Update Places
 
 - User details - Update user detail
     
-- Admin dashboard - List users, Add User, update user (not working), delete user
+- Admin dashboard - List users, Add User, update user, delete user
 
 
 🌱 Install - npm install

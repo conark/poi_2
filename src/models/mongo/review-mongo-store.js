@@ -1,4 +1,6 @@
 import { Review } from "./review.js";
+import { placeMongoStore } from "./place-mongo-store.js";
+
 
 export const reviewMongoStore = {
   async getAllReviews() {
@@ -27,13 +29,12 @@ export const reviewMongoStore = {
     }
     return null;
   },
-  async addReview(rate,review, img) {
+  async addReview(rate,review, donor, place) {
     const newReview = new Review({
       rate,
       review,
-      // img,
       donor: donor._id,
-      place: donor._id,
+      place: place._id,
     });
     await newReview.save();
     return newReview;

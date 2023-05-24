@@ -12,7 +12,7 @@ export const placeMongoStore = {
   },
    async getPlaceById(id) {
     if (id) {
-      const place = await Place.findOne({ _id: id }).lean();
+      const place = await Place.findOne({_id: id }).lean();
       return place;
     }
     return null;

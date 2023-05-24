@@ -1,6 +1,6 @@
 <div class="columns is-vcentered">
   <div class="column is-one-thirds">
-    {{> TitleBar title="Walk Trail POI" subTitle="List of beautiful walk trail!"}}
+    {{> TitleBar title="Walk Trail POI" subTitle="Everyone's walk trail!"}}
   </div>
   <div class="column">
     {{> MainNavigator }}
@@ -14,21 +14,6 @@
   <div class="column box has-text-centered">
     <h1 class="title is-4">Favorite Walk Trail</h1>
     {{> PlaceList }}
-  </div>
-</div>
-
-<div class="columns is-vcentered">
-  <div class="column is-one-thirds">
-    <img width="400" src="images/img5.png">
-  </div>
-  <div class="column box has-text-centered">
-    <h1 class="title is-4">Your Favorite Walk Trail</h1>
-    {{#if user}}
-      <div class="is-size-7">User ID: {{user._id}} Welcome {{user.firstName}} </div>
-    {{else}}
-      <div class="is-size-7">Point of Interest</div>
-    {{/if}}
-    {{> users-placelist }}
   </div>
 </div>
 

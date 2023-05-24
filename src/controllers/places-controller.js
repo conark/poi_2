@@ -39,7 +39,12 @@ export const placesController = {
         const rawCounty = request.payload.county.split(",");
         const county = await db.countyStore.findByName(rawCounty[0], rawCounty[1]);
         const { lat, lng } = request.payload;
-        await db.placeStore.place(request.payload.placename, request.payload.description,request.payload.category, loggedInUser._id, county._id,lat, lng);
+        await db.placeStore.place(
+          request.payload.placename, 
+          request.payload.description,
+          request.payload.category, 
+          loggedInUser._id, 
+          county._id,lat, lng);
         return h.redirect("/report");
       } catch (err) {
         return h.view("main", { errors: [{ message: err.message }] });

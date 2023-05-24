@@ -32,15 +32,16 @@ export const webRoutes = [
   { method: "GET", path: "/place", config: placesController.index },
   { method: "POST", path: "/place", config: placesController.place },
   { method: "GET", path: "/report", config: placesController.report },
-  { method: "POST", path: "/userplaces", config: placesController.userplaces },
-  { method: "GET", path: "/userplaces", config: placesController.userplaces },
+
+  { method: "POST", path: "/users-placelist", config: placesController.userplaces },
+  { method: "GET", path: "/users-placelist", config: placesController.userplaces },
 
   
 
   { method: "GET", path: "/editplace/{placeid}", config: placeDetailController.index },
   { method: "POST", path: "/updateplace/{placeid}", config: placeDetailController.update },
 
-  { method: "POST", path: "/editplace/{placeid}/addreview", config: reviewsController.addReview },
+  { method: "POST", path: "/editplace/addreview", config: reviewsController.addReview },
 
   {
     method: "GET",

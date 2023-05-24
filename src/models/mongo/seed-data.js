@@ -67,5 +67,21 @@ export const seedData = {
       donor: "->users.homer",
       county: "->counties.waterford",
     },
+    
   },
+  reviews: {
+    _model: "Review",
+    one: {
+      rate: 5,
+      review: "blablablaaaaa",
+      donor: "->users.bart",
+      place: "->places.one",
+    },
+    two: {
+      rate: 5,
+      review: "blablablaaaaa",
+      donor: "->users.homer",
+      place: "->places.two",
+    },
+  }
 };

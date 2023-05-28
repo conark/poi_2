@@ -19,10 +19,6 @@ export const placesController = {
       const places = await db.placeStore.getAllPlaces();
       const loggedInUser = request.auth.credentials;
       const count = places.length;
-      // let total = 0;
-      // places.forEach((place) => {
-      //   total += place.amount;
-      // });
       return h.view("Report", {
         title: "Favorite Walk Trail",
         places: places,

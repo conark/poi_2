@@ -18,6 +18,13 @@ export const placeMongoStore = {
     return null;
   },
 
+  async findByName(placename) {
+    const place = await Place.findOne({
+      placename,
+    });
+    return place;
+  },
+
 
   async getPlaceByDonor(id) {
     if (id) {

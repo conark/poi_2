@@ -8,6 +8,7 @@ export const reviewMongoStore = {
     return reviews;
   },
 
+
   async findById(id) {
     const review = await Review.findOne({ _id: id }).lean();
     return review;
@@ -19,6 +20,11 @@ export const reviewMongoStore = {
   },
 
 
+  async getReviewsByPlace(id) {
+    const reviews = await Review.find({ place: id });
+    return reviews;
+  },
+
   async getPlaceReviewById(id) {
     if (id) {
       const review = await Review.findOne({ _id: id }).lean();
@@ -29,12 +35,13 @@ export const reviewMongoStore = {
     }
     return null;
   },
+  
   async addReview(rate,review, donor, place) {
     const newReview = new Review({
       rate,
       review,
-      donor: donor._id,
-      place: place._id,
+      donor,
+      place,
     });
     await newReview.save();
     return newReview;

@@ -7,7 +7,8 @@
     <th>Latitude</th>
     <th>Longitude</th>
     <th>Creator</th>
-    <th>More</th>
+    <th>Edit</th>
+    <th>Reviews</th>
   </thead>
   <tbody>
     {{#each places}}
@@ -22,7 +23,12 @@
         <td> {{donor.firstName}} {{donor.lastName}} </td>
         <td>
           <a href="/editplace/{{_id}}" class="ui icon button">
-            <i class="fas fa-arrow-alt-circle-right"></i>
+            <i class="fas fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/review" class="ui icon button">
+            <i class="fas fa-star"></i>
           </a>
         </td>
       </tr>

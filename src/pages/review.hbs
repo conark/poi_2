@@ -1,0 +1,18 @@
+<div class="columns is-vcentered">
+  <div class="column is-one-thirds">
+    {{> TitleBar title="Walk Trail POI" subTitle="Go outside! Walk! Walk! Walk!"}}
+  </div>
+  <div class="column">
+    {{> MainNavigator active="review"}}
+  </div>
+</div>
+
+<section class="section columns is-vcentered">
+  <div class="column has-text-centered">
+    <div class="title">
+      Review
+    </div>
+    {{> list-reviews}}
+    {{> add-review}}
+  </div>
+</section>

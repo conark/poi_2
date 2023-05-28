@@ -18,6 +18,8 @@ export const webRoutes = [
 
   { method: "GET", path: "/user-view/{userid}", config: accountsController.edit },
 
+  { method: "GET", path: "/review", config: reviewsController.index },
+  { method: "POST", path: "/review/addreview", config: reviewsController.addReview },
 
   
   { method: "GET", path: "/admindashboard", config: admindashboardController.index },
@@ -41,7 +43,9 @@ export const webRoutes = [
   { method: "GET", path: "/editplace/{placeid}", config: placeDetailController.index },
   { method: "POST", path: "/updateplace/{placeid}", config: placeDetailController.update },
 
-  { method: "POST", path: "/editplace/addreview", config: reviewsController.addReview },
+
+
+  
 
   {
     method: "GET",

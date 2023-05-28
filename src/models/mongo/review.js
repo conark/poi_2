@@ -2,10 +2,9 @@ import Mongoose from "mongoose";
 
 const { Schema } = Mongoose;
 
-const reviewSchema = Schema({
+const reviewSchema = new Schema({
   rate: Number,
   review: String,
-  // img: String,
   donor: {
     type: Schema.Types.ObjectId,
     ref: "User",

@@ -1,6 +1,5 @@
 <table class="table is-fullwidth">
   <thead>
-    <th>Place</th>
     <th>Place name</th>
     <th>Rate</th>
     <th>Review</th>
@@ -9,11 +8,10 @@
   <tbody>
     {{#each reviews}}
       <tr>
-        <td>{{this.place}}</td>
-        <td>{{this.place.placename}}</td>
-        <td>{{this.rate}}</td>
-        <td>{{this.review}}</td>
-        <td>{{this.donor}}</td>
+        <td>{{place.placename}}</td>
+        <td>{{rate}}</td>
+        <td>{{review}}</td>
+        <td>{{donor.firstName}} {{donor.lastName}}</td>
         
       </tr>
     {{/each}}

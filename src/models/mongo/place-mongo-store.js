@@ -1,4 +1,6 @@
 import { Place } from "./place.js";
+// eslint-disable-next-line import/no-cycle
+import { reviewMongoStore } from "./review-mongo-store.js";
 
 export const placeMongoStore = {
   async getAllPlaces() {
@@ -28,7 +30,7 @@ export const placeMongoStore = {
 
   async getPlaceByDonor(id) {
     if (id) {
-      const places = await Place.find({ donor: id }).lean();
+      const places = await Place.find({ donor: id }).populate("donor").populate("county").lean();;
       return places;
     }
     return null;
@@ -61,7 +63,22 @@ export const placeMongoStore = {
     place.lng = updatedPlace.lng;
     await place.save();
   },
-
-
+  // async getReviewById(id) {
+  //   if (id) {
+  //     const place = await Place.find({ _id: id }).lean();
+  //     if (place) {
+  //       place.reviews = await reviewMongoStore.getReviewsByPlace(place._id);
+  //     }
+  //     return place;
+  //   }
+  //   return null;
+  // },
+  async getReviewById(id) {
+    if (id) {
+      const place = await Place.findOne({ _id: id }).populate("reviews").lean();
+      return place;
+    }
+    return null;
+  },
   
 };

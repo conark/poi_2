@@ -5,9 +5,8 @@ export const reviewsController = {
     handler: async function (request, h) {
       const loggedInUser = request.auth.credentials;
       const places = await db.placeStore.getAllPlaces();
-      // const place = await db.placeStore.getPlaceById(request.params.placeid);
       // const place = await db.reviewStore.getPlaceReviewById(request.params.placeid);
-      
+    
       const reviews = await db.reviewStore.getAllReviews();
       const viewData = {
         title: "Make a Review",
@@ -19,6 +18,8 @@ export const reviewsController = {
 
     },
   },
+
+
   reviewReport: {
     handler: async function (request, h) {
       const reviews = await db.reviewStore.getReviewsByPlaceId(request.params.placeid);
@@ -41,6 +42,28 @@ export const reviewsController = {
       });
     },
   },
+  placereviews: {
+    handler: async function (request, h) {
+      try {
+        const loggedInUser = request.auth.credentials;
+        const placereviews = await db.reviewStore.getPlaceReviewById(request.params.id);
+  
+         const count = placereviews.length;
+
+        const viewData = {
+          title: "Reivews",
+          placereviews: placereviews,
+          count: count,
+          user: loggedInUser,
+        };
+        return h.view("place-review", viewData);
+      } catch (err) {
+        return h.view("main", { errors: [{ message: err.message }] });
+      }
+    },
+  },
+
+
 
   addReview: {
     handler: async function (request, h) {
@@ -56,5 +79,6 @@ export const reviewsController = {
         return h.redirect("/review");
       }
   }
+
 };
 

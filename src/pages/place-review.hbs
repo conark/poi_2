@@ -1,0 +1,37 @@
+<div class="columns is-vcentered">
+  <div class="column is-one-thirds">
+    {{> TitleBar title="Walk Trail POI" subTitle="Go outside! Walk! Walk! Walk!"}}
+  </div>
+  <div class="column">
+    {{> MainNavigator active="place-review"}}
+  </div>
+  
+  <table class="table is-fullwidth">
+  <thead>
+    <th>Place</th>
+    <th>Place name</th>
+    <th>Rate</th>
+    <th>Review</th>
+    <th>Creator</th>
+  </thead>
+  <tbody>
+    {{#each placereviews}}
+  <tr>
+    <td>{{this.place.placename}}</td>
+    <td>{{this.rate}}</td>
+    <td>{{this.review}}</td>
+    <td>{{this.donor.firstName}}</td>
+  </tr>
+  {{/each}}
+    {{!-- {{#each placereviews}}
+      <tr>
+        <td>{{place}}</td>
+        <td>{{place.placename}}</td>
+        <td>{{rate}}</td>
+        <td>{{review}}</td>
+        <td>{{donor.firstName}}</td>
+        
+      </tr>
+    {{/each}} --}}
+  </tbody>
+</table>

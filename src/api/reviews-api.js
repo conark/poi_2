@@ -11,15 +11,25 @@ export const reviewsApi = {
       return reviews;
     },
   },
+  // findByPlace: {
+  //   auth: {
+  //     strategy: "jwt",
+  //   },
+  //   handler: async function (request, h) {
+  //     const reviews = await db.reviewStore.getPlaceReviewById(request.params.id);
+  //     return reviews;
+  //   },
+  // },
   findByPlace: {
     auth: {
       strategy: "jwt",
     },
     handler: async function (request, h) {
-      const reviews = await db.reviewStore.getReviewsByPlace(request.params.id);
+      const reviews = await db.reviewStore.getPlaceReviewById(request.params.id);
       return reviews;
     },
   },
+  
   findByDonor: {
     auth: {
       strategy: "jwt",

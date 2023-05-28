@@ -2,7 +2,7 @@ import { accountsController } from "./controllers/accounts-controller.js";
 import { placesController } from "./controllers/places-controller.js";
 import { placeDetailController } from "./controllers/places-details-controller.js";
 import { admindashboardController } from "./controllers/admin-dashboard-controller.js";
-import { reviewsController } from "./controllers/reveiw-controller.js";
+import { reviewsController } from "./controllers/review-controller.js";
 
 
 export const webRoutes = [
@@ -20,7 +20,8 @@ export const webRoutes = [
 
   { method: "GET", path: "/review", config: reviewsController.index },
   { method: "POST", path: "/review/addreview", config: reviewsController.addReview },
-
+  // { method: "GET", path: "/place-review/{placeid}", config: reviewsController.placereviews },
+  { method: "GET", path: "/place-review/{placeid}", config: reviewsController.placereviews },
   
   { method: "GET", path: "/admindashboard", config: admindashboardController.index },
   { method: "POST", path: "/admindashboard/adduser", config: admindashboardController.addUser },

@@ -1,10 +1,12 @@
 import { Review } from "./review.js";
+// eslint-disable-next-line import/no-cycle
 import { placeMongoStore } from "./place-mongo-store.js";
 
 
 export const reviewMongoStore = {
   async getAllReviews() {
-    const reviews = await Review.find().lean();
+    // const reviews = await Review.find().lean();
+    const reviews = await Review.find().populate("donor").populate("place").lean();
     return reviews;
   },
 
@@ -21,13 +23,13 @@ export const reviewMongoStore = {
 
 
   async getReviewsByPlace(id) {
-    const reviews = await Review.find({ place: id });
+    const reviews = await Review.find({ place: id }).populate("donor").populate("place").lean();
     return reviews;
   },
 
   async getPlaceReviewById(id) {
     if (id) {
-      const review = await Review.findOne({ _id: id }).lean();
+      const review = await Review.findOne({ _id: id }).populate("donor").populate("place").lean();
       if (review) {
         review.places = await placeMongoStore.getPlacesByReviewId(review._id);
       }
